@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity"
+    android:orientation="vertical"
+    android:background="#DAE1E7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        android:weightSum="10"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#DAE1E7"
+            android:src="@drawable/back"
+            android:layout_marginRight="5dp"/>
+
+        <EditText
+            android:id="@+id/edt_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:hint="Tìm kiếm truyện, tác giả hoặc chủ đề"
+            android:textSize="13sp"
+            android:drawableLeft="@drawable/search"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:layout_gravity="center"
+            android:background="@drawable/round_edittext"/>
+
+        <TextView
+            android:id="@+id/txt_SearchCancel"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_weight="1"
+            android:text="Hủy"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:visibility="gone"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="10dp"
+        android:weightSum="10"
+        android:orientation="horizontal">
+
+        <Button
+            android:text="Tiêu đề"
+            android:id="@+id/btn_tittle"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="3"
+            android:textAlignment="center"
+            android:textSize="8sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/main_light"
+            android:visibility="gone"/>
+
+        <Button
+            android:text="Tác giả"
+            android:id="@+id/btn_author"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="3"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="8sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/main_light"
+            android:visibility="gone"/>
+
+        <Button
+            android:text="Chủ đề"
+            android:id="@+id/btn_category"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="3"
+            android:textSize="8sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/main_light"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+    <GridView
+        android:id="@+id/grid_hot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        android:visibility="visible">
+
+
+    </GridView>
+
+</LinearLayout>

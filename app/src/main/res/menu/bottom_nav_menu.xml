@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Home"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        app:showAsAction="always"/>
+    <item
+        android:title="Library"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:id="@+id/library"
+        android:icon="@drawable/library"
+        app:showAsAction="always"/>
+    <item
+        android:title="Message"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:id="@+id/chat"
+        android:icon="@drawable/chat"
+        app:showAsAction="always"/>
+    <item
+        android:title="User"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:id="@+id/user"
+        android:icon="@drawable/user"
+        app:showAsAction="always"/>
+</menu>
