@@ -1,13 +1,16 @@
 package com.K204110582.finalapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.K204110582.adapters.Books;
 import com.K204110582.finalapp.databinding.ActivityBookBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BookActivity extends AppCompatActivity {
     ActivityBookBinding binding;
@@ -16,8 +19,33 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityBookBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home:
+                        return true;
+                    case R.id.library:
+                        startActivity(new Intent(getApplicationContext(),LibraryActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.chat:
+                        startActivity(new Intent(getApplicationContext(),ChatActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.user:
+                        startActivity(new Intent(getApplicationContext(),UserActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
         Bundle bundle = getIntent().getExtras();
-        if (bundle == null) {
+        Books books = (Books) bundle.get("books");
+        if (books == null) {
             showDataLibrary();
             addEvents1();
             bundle = new Bundle();
@@ -29,16 +57,17 @@ public class BookActivity extends AppCompatActivity {
     }
 
     private void showDataHome() {
+            Intent intent = getIntent();
             Bundle bundle = getIntent().getExtras();
             Books books = (Books) bundle.get("books");
             int bookId = books.getBookId();
             String bookName = books.getBookName();
             String author_name = books.getAuthor_name();
-            int price = books.getPrice();
             int bookThumb = books.getBookThumb();
             float rating = books.getRating();
             int group_chat_id = books.getGroup_chat_id();
             String source = "1";
+            int price = books.getPrice();
             binding.txtBookName.setText(bookName);
             binding.imgBook.setImageResource(bookThumb);
             binding.txtAuthor.setText(author_name);
@@ -118,6 +147,17 @@ public class BookActivity extends AppCompatActivity {
                     intent.putExtra("rating",rating);
                     startActivity(intent);
                 }
+                else {
+                    Intent intent = new Intent(BookActivity.this,MainActivity.class);
+                    intent.putExtra("bookname",bookName);
+                    intent.putExtra("bookimage",bookThumb);
+                    intent.putExtra("bookId",bookId);
+                    intent.putExtra("authorname",author_name);
+                    intent.putExtra("price",price);
+                    intent.putExtra("groupchatid",group_chat_id);
+                    intent.putExtra("rating",rating);
+                    startActivity(intent);
+                }
             }
         });
         binding.btnReadnow.setOnClickListener(new View.OnClickListener() {
@@ -150,6 +190,38 @@ public class BookActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.btnAddWishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookActivity.this,LibraryActivity.class);
+                intent.putExtra("bookname",bookName);
+                intent.putExtra("bookimage",bookThumb);
+                intent.putExtra("bookId",bookId);
+                intent.putExtra("authorname",author_name);
+                intent.putExtra("price",price);
+                intent.putExtra("groupchatid",group_chat_id);
+                intent.putExtra("rating",rating);
+                startActivityForResult(intent,RESULT_OK);
+                binding.btnDeleteWishlist.setVisibility(View.VISIBLE);
+                binding.btnAddWishlist.setVisibility(View.GONE);
+            }
+        });
+        binding.btnDeleteWishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookActivity.this,LibraryActivity.class);
+                intent.putExtra("bookname",bookName);
+                intent.putExtra("bookimage",bookThumb);
+                intent.putExtra("bookId",bookId);
+                intent.putExtra("authorname",author_name);
+                intent.putExtra("price",price);
+                intent.putExtra("groupchatid",group_chat_id);
+                intent.putExtra("rating",rating);
+                startActivityForResult(intent,RESULT_OK);
+                binding.btnDeleteWishlist.setVisibility(View.GONE);
+                binding.btnAddWishlist.setVisibility(View.VISIBLE);
+            }
+        });
     }
     private void addEvents2() {
         Bundle bundle = getIntent().getExtras();
@@ -167,6 +239,17 @@ public class BookActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (source == "0") {
                     Intent intent = new Intent(BookActivity.this,LibraryActivity.class);
+                    intent.putExtra("bookname",bookName);
+                    intent.putExtra("bookimage",bookThumb);
+                    intent.putExtra("bookId",bookId);
+                    intent.putExtra("authorname",author_name);
+                    intent.putExtra("price",price);
+                    intent.putExtra("groupchatid",group_chat_id);
+                    intent.putExtra("rating",rating);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(BookActivity.this,MainActivity.class);
                     intent.putExtra("bookname",bookName);
                     intent.putExtra("bookimage",bookThumb);
                     intent.putExtra("bookId",bookId);

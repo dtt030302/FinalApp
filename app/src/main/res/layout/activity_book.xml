@@ -170,7 +170,21 @@
                 android:backgroundTint="@color/main_light"
                 android:textAllCaps="false"
                 android:fontFamily="serif"
-                android:layout_marginEnd="20dp"/>
+                android:layout_marginEnd="20dp"
+                android:visibility="visible"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_delete_wishlist"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:text="Xóa khỏi wishlist"
+                android:background="@drawable/round_out_button"
+                android:textColor="@color/main_lightest"
+                android:backgroundTint="@color/main_light"
+                android:textAllCaps="false"
+                android:fontFamily="serif"
+                android:layout_marginEnd="20dp"
+                android:visibility="gone"/>
 
             <FrameLayout
                 android:layout_width="100dp"

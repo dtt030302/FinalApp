@@ -89,6 +89,10 @@ public class RegisterActivity extends AppCompatActivity {
                 Intent intent = new Intent(RegisterActivity.this, InformationActivity.class);
                 String value1 = "Emailfacebook@gmail.com";
                 String value2 = "Tên tài khoản FB";
+                SharedPreferences sharedPreferences = getSharedPreferences(WaitActivity.PREFS_NAME,0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("hasLoggedIn",true);
+                editor.apply();
                 intent.putExtra("email",value1);
                 startActivity(intent);
             }
@@ -99,6 +103,10 @@ public class RegisterActivity extends AppCompatActivity {
                 Intent intent = new Intent(RegisterActivity.this, InformationActivity.class);
                 String value1 = "Google@gmail.com";
                 String value2 = "Tên tài khoản Google";
+                SharedPreferences sharedPreferences = getSharedPreferences(WaitActivity.PREFS_NAME,0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("hasLoggedIn",true);
+                editor.apply();
                 intent.putExtra("email",value1);
                 startActivity(intent);
             }

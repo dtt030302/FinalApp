@@ -68,12 +68,6 @@ public class LibraryActivity extends AppCompatActivity {
         bookslist1.add(new Books(5,"The one and only","Nguyễn Thị Nghi Xuân",0,R.drawable.free5,4,5));
         readingAdapter1 = new ReadingAdapter(LibraryActivity.this,R.layout.grid_library_layout,bookslist1);
         binding.gridReading.setAdapter(readingAdapter1);
-        bookslist2 = new ArrayList<>();
-        bookslist2.add(new Books(6,"The final six","Đỗ Thị Thanh Trúc",30000,R.drawable.cost1,5,6));
-        bookslist2.add(new Books(7,"Cold lake","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost2,2,7));
-        bookslist2.add(new Books(8,"His life","Đỗ Thị Thanh Trúc",40000,R.drawable.cost3,3,8));
-        bookslist2.add(new Books(9,"Black moon","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost4,2,9));
-        bookslist2.add(new Books(10,"This is not the end","Nguyễn Thị Nghi Xuân",70000,R.drawable.cost5,3,10));
         readingAdapter2 = new ReadingAdapter(LibraryActivity.this,R.layout.grid_library_layout,bookslist2);
         binding.gridWishlist.setAdapter(readingAdapter2);
     }
