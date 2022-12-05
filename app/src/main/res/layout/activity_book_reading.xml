@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookReadingActivity"
+    android:orientation="vertical"
+    android:background="@color/main_lightest">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/free1"
+        android:scaleType="centerCrop"
+        android:id="@+id/img_book"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="10dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:background="#DAE1E7"
+            android:src="@drawable/back"
+            android:layout_marginRight="5dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_book_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Tên truyện"
+                android:textColor="@color/main_light"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="serif"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style = "?android:attr/ratingBarStyleSmall"
+        android:numStars="5"
+        android:rating="4.0"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_Author"
+                android:textSize="15sp"
+                android:text="Tên tác giả"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_marginEnd="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_light"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/txt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/main_darkest"
+                android:text="@string/free1"
+                android:fontFamily="serif"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

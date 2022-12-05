@@ -49,7 +49,6 @@ public class ReadingAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(book_layout,null);
             holder.imvThumb = view.findViewById(R.id.imageView);
-            holder.txtStar = view.findViewById(R.id.txt_Star);
             view.setTag(holder);
         }
         else {
@@ -58,12 +57,11 @@ public class ReadingAdapter extends BaseAdapter {
 
         Books b = books.get(position);
         holder.imvThumb.setImageResource(b.getBookThumb());
-        holder.txtStar.setInputType((int) b.getRating());
         return view;
     }
 
     public static class ViewHolder{
+        TextView txtBook, txtAuthor;
         ImageView imvThumb;
-        TextView txtStar;
     }
 }

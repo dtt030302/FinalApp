@@ -1,24 +1,25 @@
 package com.K204110582.adapters;
 
-public class Books {
+import java.io.Serializable;
+
+public class Books implements Serializable {
     int bookId;
     String bookName;
-    int author_id;
+    String author_name;
     int price;
     int bookThumb;
-    double rating;
+    float rating;
     int group_chat_id;
 
-    public Books(int bookId, String bookName, int author_id, int price, int bookThumb, double rating, int group_chat_id) {
+    public Books(int bookId, String bookName, String author_name, int price, int bookThumb, float rating, int group_chat_id) {
         this.bookId = bookId;
         this.bookName = bookName;
-        this.author_id = author_id;
+        this.author_name = author_name;
         this.price = price;
         this.bookThumb = bookThumb;
         this.rating = rating;
         this.group_chat_id = group_chat_id;
     }
-
     public int getBookId() {
         return bookId;
     }
@@ -35,12 +36,12 @@ public class Books {
         this.bookName = bookName;
     }
 
-    public int getAuthor_id() {
-        return author_id;
+    public String getAuthor_name() {
+        return author_name;
     }
 
-    public void setAuthor_id(int author_id) {
-        this.author_id = author_id;
+    public void setAuthor_name(String author_name) {
+        this.author_name = author_name;
     }
 
     public int getPrice() {
@@ -59,11 +60,11 @@ public class Books {
         this.bookThumb = bookThumb;
     }
 
-    public double getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 

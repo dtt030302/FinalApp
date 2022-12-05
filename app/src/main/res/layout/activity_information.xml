@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformationActivity"
+    android:background="#DAE1E7"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin cá nhân"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/main_darkest"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Email (Bắt buộc)"
+        android:textSize="20sp"
+        android:textColor="@color/main_darkest"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:id="@+id/edt_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textColorHint="#818080"
+        android:backgroundTint="@color/main_darkest"
+        android:textColor="@color/main_dark"
+        android:maxLines="1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Tên đăng nhập (Bắt buộc)"
+        android:textSize="20sp"
+        android:textColor="@color/main_darkest"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:id="@+id/edt_tdn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên đăng nhập (Bắt buộc)"
+        android:textColorHint="#818080"
+        android:backgroundTint="@color/main_darkest"
+        android:textColor="@color/main_dark"
+        android:maxLines="1"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Họ và tên"
+        android:textSize="20sp"
+        android:textColor="@color/main_darkest"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Họ và tên"
+        android:textColorHint="#818080"
+        android:backgroundTint="@color/main_darkest"
+        android:textColor="@color/main_dark"
+        android:layout_marginBottom="30dp"
+        android:maxLines="1"
+        android:inputType="text"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_toHome"
+        android:layout_width="200dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_height="50dp"
+        android:text="Đọc ngay cùng BTalk"
+        android:background="@drawable/my_message"
+        android:textColor="@color/main_lightest"
+        android:textSize="15sp"
+        android:textAllCaps="false"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/fulllogo"/>
+
+    <TextView
+        android:id="@+id/txt_false"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+</LinearLayout>

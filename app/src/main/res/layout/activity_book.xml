@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookActivity"
+    android:orientation="vertical"
+    android:background="@color/main_lightest">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="500dp"
+            android:background="@drawable/book_page">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:weightSum="5">
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/back"
+                    android:background="@color/main_dark"
+                    app:tint="@color/main_lightest" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:text="Btalk"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/main_lightest"
+                    android:textAllCaps="true"
+                    android:textSize="40sp"
+                    android:fontFamily="sans-serif-black"/>
+
+                <ImageButton
+                    android:id="@+id/btn_notification"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/notification_user"
+                    android:background="@color/main_dark"
+                    app:tint="@color/main_lightest" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="Default"
+                android:textColor="@color/main_lightest"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="serif"
+                android:id="@+id/txt_book_name"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:weightSum="2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="30dp">
+
+                    <ImageView
+                        android:id="@+id/img_book"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/free1"
+                        android:scaleType="fitXY"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:id="@+id/txt_Author" android:layout_marginBottom="20dp"                android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nguyễn Thị Nghi Xuân"
+                        android:textColor="@color/main_lightest"
+                        android:fontFamily="serif"
+                        android:layout_gravity="center"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/txt_category"  android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thể loại"
+                        android:textColor="@color/main_lightest"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginTop="40dp"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="30dp"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:numStars="5"
+                        android:stepSize="1"
+                        android:rating="3.0"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_free_cost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Default price"
+                android:textColor="@color/main_lightest"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:fontFamily="serif"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="30dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add_wishlist"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:text="Thêm vào wishlist"
+                android:background="@drawable/round_out_button"
+                android:textColor="@color/main_lightest"
+                android:backgroundTint="@color/main_light"
+                android:textAllCaps="false"
+                android:fontFamily="serif"
+                android:layout_marginEnd="20dp"/>
+
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_readnow"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="Đọc ngay"
+                    android:background="@drawable/round_out_button"
+                    android:textColor="@color/main_dark"
+                    android:backgroundTint="@color/white"
+                    android:textAllCaps="false"
+                    android:fontFamily="serif"
+                    android:visibility="visible"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_buynow"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="Mua ngay"
+                    android:background="@drawable/round_out_button"
+                    android:textColor="@color/main_dark"
+                    android:backgroundTint="@color/white"
+                    android:textAllCaps="false"
+                    android:fontFamily="serif"
+                    android:visibility="invisible"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Mô tả"
+                    android:textSize="25sp"
+                    android:fontFamily="serif"
+                    android:textColor="@color/main_dark"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Nội dung mô tả đổ vào sau khi sử dụng cơ sở dữ liệu"
+                    android:textSize="15sp"
+                    android:fontFamily="serif"
+                    android:textColor="@color/main_dark"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        android:background="#142850"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"/>
+
+</RelativeLayout>

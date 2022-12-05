@@ -3,19 +3,55 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/book_item.xml" value="0.2085" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/book_page.xml" value="0.2225" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/chat.xml" value="0.236" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/chat_shape.xml" value="0.2595" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/circle.xml" value="0.1" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/custom_ratingbar_selector.xml" value="0.149" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/edt_bg.xml" value="0.2425" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/facebook.xml" value="0.2255" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/google.xml" value="0.2255" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/home.xml" value="0.236" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2305" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/library.xml" value="0.236" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/round_edittext.xml" value="0.1" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/round_out_button.xml" value="0.2225" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/send.xml" value="0.1" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/textlogo.xml" value="0.221" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/textlogo_dark.xml" value="0.221" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/uel.xml" value="0.2305" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/drawable/user.xml" value="0.1" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_book.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_book_reading.xml" value="0.1664960764244285" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_change_pass_noti.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_change_password.xml" value="0.19709277469003847" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_chat.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_library.xml" value="0.4" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_chat_screen.xml" value="0.176" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_chatbox.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_dkdv.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_information.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_library.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_payment.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_personal.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_search.xml" value="0.4" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_start.xml" value="0.264" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_user.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/grid_layout.xml" value="0.72" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/activity_wait.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/drop_down_item.xml" value="0.4" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/grid_layout.xml" value="0.264" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/grid_library_layout.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/home_item_book.xml" value="0.4" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/item_category.xml" value="0.2" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/list_layout.xml" value="0.6" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/my_message.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/layout/their_message.xml" value="0.11214087117701575" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2305" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/FinalApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2305" />
       </map>
     </option>
   </component>
