@@ -21,7 +21,6 @@ import java.util.ArrayList;
 public class ChatActivity extends AppCompatActivity {
     ActivityChatBinding binding;
     ChatAdapter chatAdapter;
-    ArrayList<Books> chatslist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +59,8 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ChatActivity.this,ChatScreenActivity.class);
-                intent.putExtra("chattext",chatslist.get(position).getBookName());
-                intent.putExtra("chatimage",chatslist.get(position).getBookThumb());
+                intent.putExtra("chattext",BookActivity.bookslistreading.get(position).getBookName());
+                intent.putExtra("chatimage",BookActivity.bookslistreading.get(position).getBookThumb());
                 startActivity(intent);
             }
         });
@@ -75,13 +74,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void loadChatdata() {
-        chatslist = new ArrayList<>();
-        chatslist.add(new Books(1,"Sensation","Nguyễn Thị Nghi Xuân",0,R.drawable.free1,4,1));
-        chatslist.add(new Books(2,"The past is rising","Đỗ Thị Thanh Trúc",0,R.drawable.free2,3,2));
-        chatslist.add(new Books(3,"Satellite","Nguyễn Thị Nghi Xuân",0,R.drawable.free3,2,3));
-        chatslist.add(new Books(4,"Last to rise","Đỗ Thị Thanh Trúc",0,R.drawable.free4,1,4));
-        chatslist.add(new Books(5,"The one and only","Nguyễn Thị Nghi Xuân",0,R.drawable.free5,4,5));
-        chatAdapter = new ChatAdapter(ChatActivity.this,R.layout.list_layout,chatslist);
+        chatAdapter = new ChatAdapter(ChatActivity.this,R.layout.list_layout,BookActivity.bookslistreading);
         binding.lvChat.setAdapter(chatAdapter);
     }
 }

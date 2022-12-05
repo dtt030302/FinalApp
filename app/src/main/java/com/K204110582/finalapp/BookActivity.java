@@ -12,8 +12,12 @@ import com.K204110582.adapters.Books;
 import com.K204110582.finalapp.databinding.ActivityBookBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 public class BookActivity extends AppCompatActivity {
     ActivityBookBinding binding;
+    public static ArrayList<Books> bookslistreading = new ArrayList<>();
+    public static ArrayList<Books> bookslistwishlist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +61,6 @@ public class BookActivity extends AppCompatActivity {
     }
 
     private void showDataHome() {
-            Intent intent = getIntent();
             Bundle bundle = getIntent().getExtras();
             Books books = (Books) bundle.get("books");
             int bookId = books.getBookId();
@@ -68,6 +71,15 @@ public class BookActivity extends AppCompatActivity {
             int group_chat_id = books.getGroup_chat_id();
             String source = "1";
             int price = books.getPrice();
+            Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
+            if (bookslistwishlist.contains(bookcheck)) {
+                binding.btnAddWishlist.setVisibility(View.GONE);
+                binding.btnDeleteWishlist.setVisibility(View.VISIBLE);
+            }
+            else {
+                binding.btnDeleteWishlist.setVisibility(View.GONE);
+                binding.btnAddWishlist.setVisibility(View.VISIBLE);
+            }
             binding.txtBookName.setText(bookName);
             binding.imgBook.setImageResource(bookThumb);
             binding.txtAuthor.setText(author_name);
@@ -89,50 +101,18 @@ public class BookActivity extends AppCompatActivity {
             }
             binding.ratingBar.setRating(rating);
     }
-
-    private void showDataLibrary() {
-            String text =  binding.txtBookName.getText().toString();
-            Intent intent = getIntent();
-            int bookId = intent.getIntExtra("bookId",0);
-            String bookName = intent.getStringExtra("bookname");
-            String author_name = intent.getStringExtra("authorname");
-            int price = intent.getIntExtra("price",0);
-            int bookThumb = intent.getIntExtra("bookimage",R.drawable.free1);
-            float rating = intent.getFloatExtra("rating",0f);
-            int group_chat_id = intent.getIntExtra("groupchatid",0);
-            String source = "0";
-            binding.txtBookName.setText(bookName);
-            binding.imgBook.setImageResource(bookThumb);
-            binding.txtAuthor.setText(author_name);
-            if (bookId < 6) {
-                binding.txtCategory.setText("Tình cảm lãng mạn");
-            }
-            else {
-                binding.txtCategory.setText("Khoa học viễn tưởng");
-            }
-            if (price > 0) {
-                binding.btnReadnow.setVisibility(View.GONE);
-                binding.btnBuynow.setVisibility(View.VISIBLE);
-                binding.txtFreeCost.setText(price + " đ");
-            }
-            else {
-                binding.btnReadnow.setVisibility(View.VISIBLE);
-                binding.btnBuynow.setVisibility(View.GONE);
-                binding.txtFreeCost.setText("Tác phẩm miễn phí");
-            }
-            binding.ratingBar.setRating(rating);
-    }
-
-    private void addEvents1() {
-        Intent intent = getIntent();
-        int bookId = intent.getIntExtra("bookId",0);
-        String bookName = intent.getStringExtra("bookname");
-        String author_name = intent.getStringExtra("authorname");
-        int price = intent.getIntExtra("price",0);
-        int bookThumb = intent.getIntExtra("bookimage",R.drawable.free1);
-        float rating = intent.getFloatExtra("rating",0f);
-        int group_chat_id = intent.getIntExtra("groupchatid",0);
-        String source = "0";
+    private void addEvents2() {
+        Bundle bundle = getIntent().getExtras();
+        Books books = (Books) bundle.get("books");
+        int bookId = books.getBookId();
+        String bookName = books.getBookName();
+        String author_name = books.getAuthor_name();
+        int price = books.getPrice();
+        int bookThumb = books.getBookThumb();
+        float rating = books.getRating();
+        int group_chat_id = books.getGroup_chat_id();
+        String source = "1";
+        Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,6 +152,9 @@ public class BookActivity extends AppCompatActivity {
                 intent.putExtra("groupchatid",group_chat_id);
                 intent.putExtra("rating",rating);
                 intent.putExtra("source",source);
+                if (!bookslistreading.contains(bookcheck)){
+                    bookslistreading.add(bookcheck);
+                }
                 startActivity(intent);
             }
         });
@@ -193,15 +176,7 @@ public class BookActivity extends AppCompatActivity {
         binding.btnAddWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BookActivity.this,LibraryActivity.class);
-                intent.putExtra("bookname",bookName);
-                intent.putExtra("bookimage",bookThumb);
-                intent.putExtra("bookId",bookId);
-                intent.putExtra("authorname",author_name);
-                intent.putExtra("price",price);
-                intent.putExtra("groupchatid",group_chat_id);
-                intent.putExtra("rating",rating);
-                startActivityForResult(intent,RESULT_OK);
+                bookslistwishlist.add(bookcheck);
                 binding.btnDeleteWishlist.setVisibility(View.VISIBLE);
                 binding.btnAddWishlist.setVisibility(View.GONE);
             }
@@ -209,31 +184,65 @@ public class BookActivity extends AppCompatActivity {
         binding.btnDeleteWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BookActivity.this,LibraryActivity.class);
-                intent.putExtra("bookname",bookName);
-                intent.putExtra("bookimage",bookThumb);
-                intent.putExtra("bookId",bookId);
-                intent.putExtra("authorname",author_name);
-                intent.putExtra("price",price);
-                intent.putExtra("groupchatid",group_chat_id);
-                intent.putExtra("rating",rating);
-                startActivityForResult(intent,RESULT_OK);
+                bookslistwishlist.remove(bookcheck);
                 binding.btnDeleteWishlist.setVisibility(View.GONE);
                 binding.btnAddWishlist.setVisibility(View.VISIBLE);
             }
         });
     }
-    private void addEvents2() {
-        Bundle bundle = getIntent().getExtras();
-        Books books = (Books) bundle.get("books");
-        int bookId = books.getBookId();
-        String bookName = books.getBookName();
-        String author_name = books.getAuthor_name();
-        int price = books.getPrice();
-        int bookThumb = books.getBookThumb();
-        float rating = books.getRating();
-        int group_chat_id = books.getGroup_chat_id();
-        String source = "1";
+
+    private void showDataLibrary() {
+            String text =  binding.txtBookName.getText().toString();
+            Intent intent = getIntent();
+            int bookId = intent.getIntExtra("bookId",0);
+            String bookName = intent.getStringExtra("bookname");
+            String author_name = intent.getStringExtra("authorname");
+            int price = intent.getIntExtra("price",0);
+            int bookThumb = intent.getIntExtra("bookimage",R.drawable.free1);
+            float rating = intent.getFloatExtra("rating",0f);
+            int group_chat_id = intent.getIntExtra("groupchatid",0);
+            String source = "0";
+            Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
+            if (bookslistwishlist.contains(bookcheck)) {
+                binding.btnAddWishlist.setVisibility(View.GONE);
+                binding.btnDeleteWishlist.setVisibility(View.VISIBLE);
+            }
+            else {
+                binding.btnDeleteWishlist.setVisibility(View.GONE);
+                binding.btnAddWishlist.setVisibility(View.VISIBLE);
+            }
+            binding.txtBookName.setText(bookName);
+            binding.imgBook.setImageResource(bookThumb);
+            binding.txtAuthor.setText(author_name);
+            if (bookId < 6) {
+                binding.txtCategory.setText("Tình cảm lãng mạn");
+            }
+            else {
+                binding.txtCategory.setText("Khoa học viễn tưởng");
+            }
+            if (price > 0) {
+                binding.btnReadnow.setVisibility(View.GONE);
+                binding.btnBuynow.setVisibility(View.VISIBLE);
+                binding.txtFreeCost.setText(price + " đ");
+            }
+            else {
+                binding.btnReadnow.setVisibility(View.VISIBLE);
+                binding.btnBuynow.setVisibility(View.GONE);
+                binding.txtFreeCost.setText("Tác phẩm miễn phí");
+            }
+            binding.ratingBar.setRating(rating);
+    }
+    private void addEvents1() {
+        Intent intent = getIntent();
+        int bookId = intent.getIntExtra("bookId",0);
+        String bookName = intent.getStringExtra("bookname");
+        String author_name = intent.getStringExtra("authorname");
+        int price = intent.getIntExtra("price",0);
+        int bookThumb = intent.getIntExtra("bookimage",R.drawable.free1);
+        float rating = intent.getFloatExtra("rating",0f);
+        int group_chat_id = intent.getIntExtra("groupchatid",0);
+        String source = "0";
+        Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -264,16 +273,19 @@ public class BookActivity extends AppCompatActivity {
         binding.btnReadnow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BookActivity.this,BookReadingActivity.class);
-                intent.putExtra("bookname",bookName);
-                intent.putExtra("bookimage",bookThumb);
-                intent.putExtra("bookId",bookId);
-                intent.putExtra("authorname",author_name);
-                intent.putExtra("price",price);
-                intent.putExtra("groupchatid",group_chat_id);
-                intent.putExtra("rating",rating);
-                intent.putExtra("source",source);
-                startActivity(intent);
+                    Intent intent = new Intent(BookActivity.this,BookReadingActivity.class);
+                    intent.putExtra("bookname",bookName);
+                    intent.putExtra("bookimage",bookThumb);
+                    intent.putExtra("bookId",bookId);
+                    intent.putExtra("authorname",author_name);
+                    intent.putExtra("price",price);
+                    intent.putExtra("groupchatid",group_chat_id);
+                    intent.putExtra("rating",rating);
+                    intent.putExtra("source",source);
+                    if (!bookslistreading.contains(bookcheck)){
+                        bookslistreading.add(bookcheck);
+                    }
+                    startActivity(intent);
             }
         });
         binding.btnBuynow.setOnClickListener(new View.OnClickListener() {
@@ -291,5 +303,22 @@ public class BookActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.btnAddWishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bookslistwishlist.add(bookcheck);
+                binding.btnDeleteWishlist.setVisibility(View.VISIBLE);
+                binding.btnAddWishlist.setVisibility(View.GONE);
+            }
+        });
+        binding.btnDeleteWishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bookslistwishlist.remove(bookcheck);
+                binding.btnDeleteWishlist.setVisibility(View.GONE);
+                binding.btnAddWishlist.setVisibility(View.VISIBLE);
+            }
+        });
     }
+
 }

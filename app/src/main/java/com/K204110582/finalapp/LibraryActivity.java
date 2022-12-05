@@ -22,8 +22,6 @@ public class LibraryActivity extends AppCompatActivity {
     ActivityLibraryBinding binding;
     ReadingAdapter readingAdapter1;
     ReadingAdapter readingAdapter2;
-    ArrayList<Books> bookslist1;
-    ArrayList<Books> bookslist2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +58,9 @@ public class LibraryActivity extends AppCompatActivity {
     }
 
     private void loadReadingData() {
-        bookslist1 = new ArrayList<>();
-        bookslist1.add(new Books(1,"Sensation","Nguyễn Thị Nghi Xuân",0,R.drawable.free1,4,1));
-        bookslist1.add(new Books(2,"The past is rising","Đỗ Thị Thanh Trúc",0,R.drawable.free2,3,2));
-        bookslist1.add(new Books(3,"Satellite","Nguyễn Thị Nghi Xuân",0,R.drawable.free3,2,3));
-        bookslist1.add(new Books(4,"Last to rise","Đỗ Thị Thanh Trúc",0,R.drawable.free4,1,4));
-        bookslist1.add(new Books(5,"The one and only","Nguyễn Thị Nghi Xuân",0,R.drawable.free5,4,5));
-        readingAdapter1 = new ReadingAdapter(LibraryActivity.this,R.layout.grid_library_layout,bookslist1);
+        readingAdapter1 = new ReadingAdapter(LibraryActivity.this,R.layout.grid_library_layout,BookActivity.bookslistreading);
         binding.gridReading.setAdapter(readingAdapter1);
-        readingAdapter2 = new ReadingAdapter(LibraryActivity.this,R.layout.grid_library_layout,bookslist2);
+        readingAdapter2 = new ReadingAdapter(LibraryActivity.this,R.layout.grid_library_layout,BookActivity.bookslistwishlist);
         binding.gridWishlist.setAdapter(readingAdapter2);
     }
 
@@ -102,13 +94,13 @@ public class LibraryActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(LibraryActivity.this,BookActivity.class);
-                intent.putExtra("bookname",bookslist1.get(position).getBookName());
-                intent.putExtra("bookimage",bookslist1.get(position).getBookThumb());
-                intent.putExtra("bookId",bookslist1.get(position).getBookId());
-                intent.putExtra("authorname",bookslist1.get(position).getAuthor_name());
-                intent.putExtra("price",bookslist1.get(position).getPrice());
-                intent.putExtra("groupchatid",bookslist1.get(position).getGroup_chat_id());
-                intent.putExtra("rating",bookslist1.get(position).getRating());
+                intent.putExtra("bookname",BookActivity.bookslistreading.get(position).getBookName());
+                intent.putExtra("bookimage",BookActivity.bookslistreading.get(position).getBookThumb());
+                intent.putExtra("bookId",BookActivity.bookslistreading.get(position).getBookId());
+                intent.putExtra("authorname",BookActivity.bookslistreading.get(position).getAuthor_name());
+                intent.putExtra("price",BookActivity.bookslistreading.get(position).getPrice());
+                intent.putExtra("groupchatid",BookActivity.bookslistreading.get(position).getGroup_chat_id());
+                intent.putExtra("rating",BookActivity.bookslistreading.get(position).getRating());
                 intent.putExtra("source",0);
                 startActivity(intent);
             }
@@ -117,13 +109,13 @@ public class LibraryActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(LibraryActivity.this,BookActivity.class);
-                intent.putExtra("bookname",bookslist2.get(position).getBookName());
-                intent.putExtra("bookimage",bookslist2.get(position).getBookThumb());
-                intent.putExtra("bookId",bookslist2.get(position).getBookId());
-                intent.putExtra("authorname",bookslist2.get(position).getAuthor_name());
-                intent.putExtra("price",bookslist2.get(position).getPrice());
-                intent.putExtra("groupchatid",bookslist2.get(position).getGroup_chat_id());
-                intent.putExtra("rating",bookslist2.get(position).getRating());
+                intent.putExtra("bookname",BookActivity.bookslistwishlist.get(position).getBookName());
+                intent.putExtra("bookimage",BookActivity.bookslistwishlist.get(position).getBookThumb());
+                intent.putExtra("bookId",BookActivity.bookslistwishlist.get(position).getBookId());
+                intent.putExtra("authorname",BookActivity.bookslistwishlist.get(position).getAuthor_name());
+                intent.putExtra("price",BookActivity.bookslistwishlist.get(position).getPrice());
+                intent.putExtra("groupchatid",BookActivity.bookslistwishlist.get(position).getGroup_chat_id());
+                intent.putExtra("rating",BookActivity.bookslistwishlist.get(position).getRating());
                 intent.putExtra("source",0);
                 startActivity(intent);
             }

@@ -79,34 +79,34 @@ public class MainActivity extends AppCompatActivity {
         List<Category> listCategory = new ArrayList<>();
 
         List<Books> listBookfree = new ArrayList<>();
-        listBookfree.add(new Books(1,"Sensation","Nguyễn Thị Nghi Xuân",0,R.drawable.free1,4,1));
-        listBookfree.add(new Books(2,"The past is rising","Đỗ Thị Thanh Trúc",0,R.drawable.free2,3,2));
-        listBookfree.add(new Books(3,"Satellite","Nguyễn Thị Nghi Xuân",0,R.drawable.free3,2,3));
-        listBookfree.add(new Books(4,"Last to rise","Đỗ Thị Thanh Trúc",0,R.drawable.free4,1,4));
-        listBookfree.add(new Books(5,"The one and only","Nguyễn Thị Nghi Xuân",0,R.drawable.free5,4,5));
+        listBookfree.add(new Books(1,"Sensation","Nguyễn Thị Nghi Xuân",0,R.drawable.free1,4,0));
+        listBookfree.add(new Books(2,"The past is rising","Đỗ Thị Thanh Trúc",0,R.drawable.free2,3,0));
+        listBookfree.add(new Books(3,"Satellite","Nguyễn Thị Nghi Xuân",0,R.drawable.free3,2,0));
+        listBookfree.add(new Books(4,"Last to rise","Đỗ Thị Thanh Trúc",0,R.drawable.free4,1,0));
+        listBookfree.add(new Books(5,"The one and only","Nguyễn Thị Nghi Xuân",0,R.drawable.free5,4,0));
 
         List<Books> listBookcost = new ArrayList<>();
-        listBookcost.add(new Books(6,"The final six","Đỗ Thị Thanh Trúc",30000,R.drawable.cost1,5,6));
-        listBookcost.add(new Books(7,"Cold lake","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost2,2,7));
-        listBookcost.add(new Books(8,"His life","Đỗ Thị Thanh Trúc",40000,R.drawable.cost3,3,8));
-        listBookcost.add(new Books(9,"Black moon","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost4,2,9));
-        listBookcost.add(new Books(10,"This is not the end","Nguyễn Thị Nghi Xuân",70000,R.drawable.cost5,3,10));
+        listBookcost.add(new Books(6,"The final six","Đỗ Thị Thanh Trúc",30000,R.drawable.cost1,5,0));
+        listBookcost.add(new Books(7,"Cold lake","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost2,2,0));
+        listBookcost.add(new Books(8,"His life","Đỗ Thị Thanh Trúc",40000,R.drawable.cost3,3,0));
+        listBookcost.add(new Books(9,"Black moon","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost4,2,0));
+        listBookcost.add(new Books(10,"This is not the end","Nguyễn Thị Nghi Xuân",70000,R.drawable.cost5,3,0));
 
         List<Books> listBookforyou = new ArrayList<>();
-        listBookforyou.add(new Books(1,"Sensation","Nguyễn Thị Nghi Xuân",0,R.drawable.free1,4,1));
-        listBookforyou.add(new Books(10,"This is not the end","Nguyễn Thị Nghi Xuân",70000,R.drawable.cost5,3,10));
-        listBookforyou.add(new Books(2,"The past is rising","Đỗ Thị Thanh Trúc",0,R.drawable.free2,3,2));
-        listBookforyou.add(new Books(5,"The one and only","Nguyễn Thị Nghi Xuân",0,R.drawable.free5,4,5));
-        listBookforyou.add(new Books(6,"The final six","Đỗ Thị Thanh Trúc",30000,R.drawable.cost1,5,6));
-        listBookforyou.add(new Books(7,"Cold lake","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost2,2,7));
-        listBookforyou.add(new Books(3,"Satellite","Nguyễn Thị Nghi Xuân",0,R.drawable.free3,2,3));
-        listBookforyou.add(new Books(4,"Last to rise","Đỗ Thị Thanh Trúc",0,R.drawable.free4,1,4));
-        listBookforyou.add(new Books(8,"His life","Đỗ Thị Thanh Trúc",40000,R.drawable.cost3,3,8));
-        listBookforyou.add(new Books(9,"Black moon","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost4,2,9));
+        listBookforyou.add(new Books(1,"Sensation","Nguyễn Thị Nghi Xuân",0,R.drawable.free1,4,0));
+        listBookforyou.add(new Books(10,"This is not the end","Nguyễn Thị Nghi Xuân",70000,R.drawable.cost5,3,0));
+        listBookforyou.add(new Books(2,"The past is rising","Đỗ Thị Thanh Trúc",0,R.drawable.free2,3,0));
+        listBookforyou.add(new Books(5,"The one and only","Nguyễn Thị Nghi Xuân",0,R.drawable.free5,4,0));
+        listBookforyou.add(new Books(6,"The final six","Đỗ Thị Thanh Trúc",30000,R.drawable.cost1,5,0));
+        listBookforyou.add(new Books(7,"Cold lake","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost2,2,0));
+        listBookforyou.add(new Books(3,"Satellite","Nguyễn Thị Nghi Xuân",0,R.drawable.free3,2,0));
+        listBookforyou.add(new Books(4,"Last to rise","Đỗ Thị Thanh Trúc",0,R.drawable.free4,1,0));
+        listBookforyou.add(new Books(8,"His life","Đỗ Thị Thanh Trúc",40000,R.drawable.cost3,3,0));
+        listBookforyou.add(new Books(9,"Black moon","Nguyễn Thị Nghi Xuân",50000,R.drawable.cost4,2,0));
 
-        listCategory.add(new Category("Truyện dành cho bạn",listBookforyou));
-        listCategory.add(new Category("Truyện tính phí",listBookcost));
-        listCategory.add(new Category("Truyện miễn phí",listBookfree));
+        listCategory.add(new Category("Sách dành cho bạn",listBookforyou));
+        listCategory.add(new Category("Sách tính phí",listBookcost));
+        listCategory.add(new Category("Sách miễn phí",listBookfree));
         return listCategory;
     }
 

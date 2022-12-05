@@ -99,7 +99,9 @@
             android:numColumns="2"
             android:padding="5dp"
             android:visibility="gone"
-            android:scrollbars="vertical"/>
+            android:scrollbars="vertical"
+            android:paddingBottom="40dp"
+            android:layout_marginBottom="80dp"/>
 
         <GridView
             android:id="@+id/grid_reading"
@@ -108,7 +110,9 @@
             android:numColumns="2"
             android:padding="5dp"
             android:visibility="visible"
-            android:scrollbars="vertical"/>
+            android:scrollbars="vertical"
+            android:paddingBottom="40dp"
+            android:layout_marginBottom="80dp"/>
 
     </LinearLayout>
 

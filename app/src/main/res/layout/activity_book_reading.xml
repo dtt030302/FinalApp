@@ -95,6 +95,19 @@
                 android:text="@string/free1"
                 android:fontFamily="serif"/>
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Đánh giá"
+                android:background="@drawable/round_out_button"
+                android:id="@+id/btn_rating"
+                android:textColor="@color/main_lightest"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"/>
+
         </LinearLayout>
 
     </ScrollView>

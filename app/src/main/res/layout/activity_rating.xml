@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RatingActivity"
+    android:orientation="vertical"
+    android:background="@color/main_lightest">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_book"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/free1"/>
+
+        <TextView
+            android:id="@+id/txt_book_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên truyện"
+            android:textColor="@color/main_darkest"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/txt_Author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nguyễn Thị Nghi Xuân"
+            android:textColor="@color/main_darkest"
+            android:fontFamily="serif"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:gravity="center" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đánh giá"
+            android:textColor="@color/main_darkest"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:background="@drawable/edt_bg"
+            android:gravity="top|left"
+            android:textColor="@color/main_darkest"
+            android:padding="20dp"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:numStars="5"
+            android:stepSize="1"
+            android:rating="5.0"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Trở về"
+                android:background="@drawable/round_out_button"
+                android:id="@+id/btn_back"
+                android:textColor="@color/main_lightest"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginEnd="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Đánh giá"
+                android:background="@drawable/round_out_button"
+                android:id="@+id/btn_rating"
+                android:textColor="@color/main_lightest"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

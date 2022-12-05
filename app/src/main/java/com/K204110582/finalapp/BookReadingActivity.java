@@ -21,10 +21,32 @@ public class BookReadingActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+        Intent intent = getIntent();
+        int bookId = intent.getIntExtra("bookId",0);
+        String bookName = intent.getStringExtra("bookname");
+        String author_name = intent.getStringExtra("authorname");
+        int price = intent.getIntExtra("price",0);
+        int bookThumb = intent.getIntExtra("bookimage",R.drawable.free1);
+        float rating = intent.getFloatExtra("rating",0f);
+        int group_chat_id = intent.getIntExtra("groupchatid",0);
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        binding.btnRating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookReadingActivity.this,RatingActivity.class);
+                intent.putExtra("bookname",bookName);
+                intent.putExtra("authorname",author_name);
+                intent.putExtra("bookimage",bookThumb);
+                intent.putExtra("rating",rating);
+                String author_name = intent.getStringExtra("authorname");
+                int bookThumb = intent.getIntExtra("bookimage",R.drawable.free1);
+                float rating = intent.getFloatExtra("rating",0f);
+                startActivity(intent);
             }
         });
     }
