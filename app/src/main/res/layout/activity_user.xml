@@ -258,7 +258,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/friend_user"
+            android:id="@+id/payment_user"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/circle"
@@ -285,7 +285,7 @@
                 android:layout_gravity="center"
                 android:gravity="center|left"
                 android:textColor="@color/black"
-                android:text="Tài khoản thanh toán"/>
+                android:text="Thanh toán"/>
 
             <TextView
                 android:layout_width="0dp"

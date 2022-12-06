@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentTypeActivity"
+    android:background="@color/main_lightest"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+        android:weightSum="10"
+        android:padding="3dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:layout_weight="2"
+            android:background="#DAE1E7"
+            android:src="@drawable/back"/>
+
+        <TextView
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/main_dark"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:text="Thông tin thanh toán"
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#E4E9ED"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/momo"
+            android:padding="10dp"
+            android:background="#E4E9ED"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:text="Momo"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:textColor="@color/main_darkest"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="#E4E9ED"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Số tài khoản"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/main_darkest"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:inputType="number"
+            android:id="@+id/momo"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:hint="Số tài khoản"
+            android:textSize="15sp"
+            android:textColor="@color/main_darkest"
+            android:textColorHint="@color/main_dark"
+            android:maxLines="1"
+            android:maxLength="15"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#E4E9ED"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="70dp"
+            android:src="@drawable/vnpay"
+            android:background="#E4E9ED"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:text="VNPay"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:textColor="@color/main_darkest"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="#E4E9ED"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Số tài khoản"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/main_darkest"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:inputType="number"
+            android:id="@+id/vnpay"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:hint="Số tài khoản"
+            android:textSize="15sp"
+            android:textColor="@color/main_darkest"
+            android:textColorHint="@color/main_dark"
+            android:maxLines="1"
+            android:maxLength="15"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#E4E9ED"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_shopeepay"
+            android:background="#E4E9ED"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:text="ShopeePay"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:textColor="@color/main_darkest"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="#E4E9ED"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Số tài khoản"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/main_darkest"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:inputType="number"
+            android:id="@+id/shopeepay"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:hint="Số tài khoản"
+            android:textSize="15sp"
+            android:textColor="@color/main_darkest"
+            android:textColorHint="@color/main_dark"
+            android:maxLines="1"
+            android:maxLength="15"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#E4E9ED"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="70dp"
+            android:src="@drawable/zalopay"
+            android:background="#E4E9ED"
+            android:padding="20dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:text="ZaloPay"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:textColor="@color/main_darkest"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="#E4E9ED"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Số tài khoản"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/main_darkest"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:inputType="number"
+            android:id="@+id/zalopay"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:hint="Số tài khoản"
+            android:textSize="15sp"
+            android:textColor="@color/main_darkest"
+            android:textColorHint="@color/main_dark"
+            android:maxLines="1"
+            android:maxLength="15"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_confirm"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/round_out_button"
+        android:text="Xác nhận"
+        android:textColor="@color/main_lightest"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

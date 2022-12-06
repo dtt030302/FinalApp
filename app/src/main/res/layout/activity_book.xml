@@ -220,12 +220,14 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -239,13 +241,17 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:text="Nội dung mô tả đổ vào sau khi sử dụng cơ sở dữ liệu"
                     android:textSize="15sp"
                     android:fontFamily="serif"
                     android:textColor="@color/main_dark"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="60dp"
                     android:layout_gravity="center"
                     android:gravity="center"/>
 

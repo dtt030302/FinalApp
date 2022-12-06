@@ -122,5 +122,54 @@ public class UserActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.helpUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this,SupportActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.displayUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this,ViewActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.paymentUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this, PaymentTypeActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.languageUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this,LanguageActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.notiUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this,NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.privacyUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this,PrivacyActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.securityUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this, SecurityActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

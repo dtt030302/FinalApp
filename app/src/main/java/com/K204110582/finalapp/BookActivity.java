@@ -203,6 +203,40 @@ public class BookActivity extends AppCompatActivity {
             String source = "1";
             int price = books.getPrice();
             Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
+            String data = getResources().getString(R.string.cost1);
+            String half1 = data.substring(0, data.length() / 10);
+            String half2 = data.substring(data.length()/10);
+            data = getResources().getString(R.string.cost2);
+            String half3 = data.substring(0, data.length() / 10);
+            String half4 = data.substring(data.length()/10);
+            data = getResources().getString(R.string.cost3);
+            String half5 = data.substring(0, data.length() / 10);
+            String half6 = data.substring(data.length()/10);
+            data = getResources().getString(R.string.cost4);
+            String half7 = data.substring(0, data.length() / 10);
+            String half8 = data.substring(data.length()/10);
+            if (bookId > 3) {
+                binding.description.setText(half2);
+            }
+            else {
+
+                if (bookId > 5) {
+                    binding.description.setText(half4);
+                }
+                else {
+                    if (bookId > 7) {
+                        binding.description.setText(half6);
+                    }
+                    else {
+                        if (bookId > 9) {
+                            binding.description.setText(half8);
+                        }
+                        else {
+                            binding.description.setText("Đây chính là quyển dở nhất");
+                        }
+                    }
+                }
+            }
             if (hasWishList) {
                 binding.btnAddWishlist.setVisibility(View.GONE);
                 binding.btnDeleteWishlist.setVisibility(View.VISIBLE);
