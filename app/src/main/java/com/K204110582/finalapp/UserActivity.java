@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +19,8 @@ import android.widget.LinearLayout;
 import com.K204110582.finalapp.databinding.ActivityMainBinding;
 import com.K204110582.finalapp.databinding.ActivityUserBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.ByteArrayOutputStream;
 
 public class UserActivity extends AppCompatActivity {
     ActivityUserBinding binding;
@@ -59,6 +64,11 @@ public class UserActivity extends AppCompatActivity {
         String text = intent.getStringExtra("email");
         String text1 = intent.getStringExtra("tdn");
         String text2 = intent.getStringExtra("hovaten");
+        byte[] byteArray = getIntent().getByteArrayExtra("avt");
+        if (byteArray != null) {
+            Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            binding.avtPic.setImageBitmap(bmp);
+        }
         if (TextUtils.isEmpty(text)) {
         }
         else {
@@ -84,6 +94,13 @@ public class UserActivity extends AppCompatActivity {
                 intent.putExtra("email",text);
                 intent.putExtra("tdn",text1);
                 intent.putExtra("hovaten",text2);
+                Bitmap bitmapdata = ((BitmapDrawable)binding.avtPic.getDrawable()).getBitmap();
+                if (bitmapdata != null) {
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bitmapdata.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+                    intent.putExtra("avt",byteArray);
+                }
                 startActivity(intent);
             }
         });

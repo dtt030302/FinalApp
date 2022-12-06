@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 
 import com.K204110582.finalapp.databinding.ActivityUserInformationBinding;
 
+import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -37,6 +39,7 @@ public class UserInformationActivity extends AppCompatActivity {
     LinearLayout linearLayout;
     public static final int PERMISSION_REQUEST = 0;
     public static final int RESULT_LOAD_IMAGE = 1;
+    public static Bitmap bitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +49,7 @@ public class UserInformationActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M || checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},PERMISSION_REQUEST);
         }
-
+        binding.imgAvatar.setImageBitmap(UserInformationActivity.bitmap);
         editText = findViewById(R.id.edt_birth);
         imageView = findViewById(R.id.img_avatar);
         linearLayout = findViewById(R.id.avatar);
@@ -94,7 +97,15 @@ public class UserInformationActivity extends AppCompatActivity {
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(UserInformationActivity.this,UserActivity.class);
+                Bitmap bitmapdata = ((BitmapDrawable)binding.imgAvatar.getDrawable()).getBitmap();
+                if (bitmapdata != null) {
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bitmapdata.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+                    intent.putExtra("avt",byteArray);
+                }
+                startActivity(intent);
             }
         });
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -122,6 +133,11 @@ public class UserInformationActivity extends AppCompatActivity {
     }
 
     private void showData() {
+        byte[] byteArray = getIntent().getByteArrayExtra("avt");
+        if (byteArray != null) {
+            Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            binding.imgAvatar.setImageBitmap(bmp);
+        }
         Intent intent = getIntent();
         String text = intent.getStringExtra("email");
         String text1 = intent.getStringExtra("tdn");
