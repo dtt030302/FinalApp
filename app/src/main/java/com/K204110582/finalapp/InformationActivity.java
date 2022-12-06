@@ -31,8 +31,10 @@ public class InformationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.edt_mail);
                 EditText editText1 = findViewById(R.id.edt_tdn);
+                EditText editText2 = findViewById(R.id.edt_name);
                 String text = editText.getText().toString();
                 String text1 = editText1.getText().toString();
+                String text2 = editText2.getText().toString();
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
                 if (TextUtils.isEmpty(text) || TextUtils.isEmpty(text1)) {
                     Toast.makeText(InformationActivity.this,"Vui lòng điền vào các thông tin bắt buộc", Toast.LENGTH_LONG).show();
@@ -43,6 +45,7 @@ public class InformationActivity extends AppCompatActivity {
                         Intent intent = new Intent(InformationActivity.this,UserActivity.class);
                         intent.putExtra("email",text);
                         intent.putExtra("tdn",text1);
+                        intent.putExtra("hovaten",text2);
                         startActivity(intent);
                     }
                     else

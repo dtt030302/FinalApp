@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +19,17 @@ public class BookActivity extends AppCompatActivity {
     ActivityBookBinding binding;
     public static ArrayList<Books> bookslistreading = new ArrayList<>();
     public static ArrayList<Books> bookslistwishlist = new ArrayList<>();
+    public static String WISHLISTFREE1= "hasWishListFree1";
+    public static String WISHLISTFREE2= "hasWishListFree2";
+    public static String WISHLISTFREE3= "hasWishListFree3";
+    public static String WISHLISTFREE4= "hasWishListFree4";
+    public static String WISHLISTFREE5= "hasWishListFree5";
+    public static String WISHLISTCOST1= "hasWishListCost1";
+    public static String WISHLISTCOST2= "hasWishListCost2";
+    public static String WISHLISTCOST3= "hasWishListCost3";
+    public static String WISHLISTCOST4= "hasWishListCost4";
+    public static String WISHLISTCOST5= "hasWishListCost5";
+    public static boolean hasWishList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +62,130 @@ public class BookActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         Books books = (Books) bundle.get("books");
         if (books == null) {
+            Intent intent = getIntent();
+            int bookId = intent.getIntExtra("bookId",0);
+            if (bookId == 1) {
+                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE1,0);
+                hasWishList = sharedPreferences.getBoolean("hasWishListFree1",false);
+            }
+            else {
+                if (bookId == 2) {
+                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE2,0);
+                    hasWishList = sharedPreferences.getBoolean("hasWishListFree2",false);
+                }
+                else {
+                    if (bookId == 3) {
+                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE3,0);
+                        hasWishList = sharedPreferences.getBoolean("hasWishListFree3",false);
+                    }
+                    else {
+                        if (bookId == 4) {
+                            SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE4,0);
+                            hasWishList = sharedPreferences.getBoolean("hasWishListFree4",false);
+                        }
+                        else {
+                            if (bookId == 5) {
+                                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE5,0);
+                                hasWishList = sharedPreferences.getBoolean("hasWishListFree5",false);
+                            }
+                            else {
+                                if (bookId == 6) {
+                                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST1,0);
+                                    hasWishList = sharedPreferences.getBoolean("hasWishListCost1",false);
+                                }
+                                else {
+                                    if (bookId == 7) {
+                                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST2,0);
+                                        hasWishList = sharedPreferences.getBoolean("hasWishListCost2",false);
+                                    }
+                                    else {
+                                        if (bookId == 8) {
+                                            SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST3,0);
+                                            hasWishList = sharedPreferences.getBoolean("hasWishListCost3",false);
+                                        }
+                                        else {
+                                            if (bookId == 9) {
+                                                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST4,0);
+                                                hasWishList = sharedPreferences.getBoolean("hasWishListCost4",false);
+                                            }
+                                            else {
+                                                if (bookId == 10) {
+                                                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST5,0);
+                                                    hasWishList = sharedPreferences.getBoolean("hasWishListCost5",false);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             showDataLibrary();
             addEvents1();
             bundle = new Bundle();
         }
         else {
+            int bookId = books.getBookId();
+            if (bookId == 1) {
+                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE1,0);
+                hasWishList = sharedPreferences.getBoolean("hasWishListFree1",false);
+            }
+            else {
+                if (bookId == 2) {
+                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE2,0);
+                    hasWishList = sharedPreferences.getBoolean("hasWishListFree2",false);
+                }
+                else {
+                    if (bookId == 3) {
+                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE3,0);
+                        hasWishList = sharedPreferences.getBoolean("hasWishListFree3",false);
+                    }
+                    else {
+                        if (bookId == 4) {
+                            SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE4,0);
+                            hasWishList = sharedPreferences.getBoolean("hasWishListFree4",false);
+                        }
+                        else {
+                            if (bookId == 5) {
+                                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE5,0);
+                                hasWishList = sharedPreferences.getBoolean("hasWishListFree5",false);
+                            }
+                            else {
+                                if (bookId == 6) {
+                                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST1,0);
+                                    hasWishList = sharedPreferences.getBoolean("hasWishListCost1",false);
+                                }
+                                else {
+                                    if (bookId == 7) {
+                                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST2,0);
+                                        hasWishList = sharedPreferences.getBoolean("hasWishListCost2",false);
+                                    }
+                                    else {
+                                        if (bookId == 8) {
+                                            SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST3,0);
+                                            hasWishList = sharedPreferences.getBoolean("hasWishListCost3",false);
+                                        }
+                                        else {
+                                            if (bookId == 9) {
+                                                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST4,0);
+                                                hasWishList = sharedPreferences.getBoolean("hasWishListCost4",false);
+                                            }
+                                            else {
+                                                if (bookId == 10) {
+                                                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST5,0);
+                                                    hasWishList = sharedPreferences.getBoolean("hasWishListCost5",false);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         showDataHome();
         addEvents2();
         }
@@ -72,7 +203,7 @@ public class BookActivity extends AppCompatActivity {
             String source = "1";
             int price = books.getPrice();
             Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
-            if (bookslistwishlist.contains(bookcheck)) {
+            if (hasWishList) {
                 binding.btnAddWishlist.setVisibility(View.GONE);
                 binding.btnDeleteWishlist.setVisibility(View.VISIBLE);
             }
@@ -113,6 +244,8 @@ public class BookActivity extends AppCompatActivity {
         int group_chat_id = books.getGroup_chat_id();
         String source = "1";
         Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
+        ArrayList<Books> bookchecklist = new ArrayList<>();
+        bookchecklist.add(new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id));
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,9 +285,8 @@ public class BookActivity extends AppCompatActivity {
                 intent.putExtra("groupchatid",group_chat_id);
                 intent.putExtra("rating",rating);
                 intent.putExtra("source",source);
-                if (!bookslistreading.contains(bookcheck)){
-                    bookslistreading.add(bookcheck);
-                }
+                bookslistreading.removeAll(bookchecklist);
+                bookslistreading.add(bookcheck);
                 startActivity(intent);
             }
         });
@@ -184,7 +316,7 @@ public class BookActivity extends AppCompatActivity {
         binding.btnDeleteWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bookslistwishlist.remove(bookcheck);
+                bookslistwishlist.removeAll(bookchecklist);
                 binding.btnDeleteWishlist.setVisibility(View.GONE);
                 binding.btnAddWishlist.setVisibility(View.VISIBLE);
             }
@@ -203,7 +335,7 @@ public class BookActivity extends AppCompatActivity {
             int group_chat_id = intent.getIntExtra("groupchatid",0);
             String source = "0";
             Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
-            if (bookslistwishlist.contains(bookcheck)) {
+            if (hasWishList) {
                 binding.btnAddWishlist.setVisibility(View.GONE);
                 binding.btnDeleteWishlist.setVisibility(View.VISIBLE);
             }
@@ -243,6 +375,8 @@ public class BookActivity extends AppCompatActivity {
         int group_chat_id = intent.getIntExtra("groupchatid",0);
         String source = "0";
         Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
+        ArrayList<Books> bookchecklist = new ArrayList<>();
+        bookchecklist.add(new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id));
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -282,9 +416,8 @@ public class BookActivity extends AppCompatActivity {
                     intent.putExtra("groupchatid",group_chat_id);
                     intent.putExtra("rating",rating);
                     intent.putExtra("source",source);
-                    if (!bookslistreading.contains(bookcheck)){
-                        bookslistreading.add(bookcheck);
-                    }
+                    bookslistreading.removeAll(bookchecklist);
+                    bookslistreading.add(bookcheck);
                     startActivity(intent);
             }
         });
@@ -306,6 +439,84 @@ public class BookActivity extends AppCompatActivity {
         binding.btnAddWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (bookId == 1) {
+                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE1,0);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("hasWishListFree1",true);
+                    editor.apply();
+                }
+                else {
+                    if (bookId == 2) {
+                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE2,0);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean("hasWishListFree2",true);
+                        editor.apply();
+                    }
+                    else {
+                        if (bookId == 3) {
+                            SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE3,0);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putBoolean("hasWishListFree3",true);
+                            editor.apply();
+                        }
+                        else {
+                            if (bookId == 4) {
+                                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE4,0);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putBoolean("hasWishListFree4",true);
+                                editor.apply();
+                            }
+                            else {
+                                if (bookId == 5) {
+                                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE5,0);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putBoolean("hasWishListFree5",true);
+                                    editor.apply();
+                                }
+                                else {
+                                    if (bookId == 6) {
+                                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST1,0);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putBoolean("hasWishListCost1",true);
+                                        editor.apply();
+                                    }
+                                    else {
+                                        if (bookId == 7) {
+                                            SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST2,0);
+                                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                                            editor.putBoolean("hasWishListCost2",true);
+                                            editor.apply();
+                                        }
+                                        else {
+                                            if (bookId == 8) {
+                                                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST3,0);
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putBoolean("hasWishListCost3",true);
+                                                editor.apply();
+                                            }
+                                            else {
+                                                if (bookId == 9) {
+                                                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST4,0);
+                                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                    editor.putBoolean("hasWishListCost4",true);
+                                                    editor.apply();
+                                                }
+                                                else {
+                                                    if (bookId == 10) {
+                                                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST5,0);
+                                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                        editor.putBoolean("hasWishListCost5",true);
+                                                        editor.apply();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 bookslistwishlist.add(bookcheck);
                 binding.btnDeleteWishlist.setVisibility(View.VISIBLE);
                 binding.btnAddWishlist.setVisibility(View.GONE);
@@ -314,7 +525,85 @@ public class BookActivity extends AppCompatActivity {
         binding.btnDeleteWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bookslistwishlist.remove(bookcheck);
+                if (bookId == 1) {
+                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE1,0);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("hasWishListFree1",false);
+                    editor.apply();
+                }
+                else {
+                    if (bookId == 2) {
+                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE2,0);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean("hasWishListFree2",false);
+                        editor.apply();
+                    }
+                    else {
+                        if (bookId == 3) {
+                            SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE3,0);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putBoolean("hasWishListFree3",false);
+                            editor.apply();
+                        }
+                        else {
+                            if (bookId == 4) {
+                                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE4,0);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putBoolean("hasWishListFree4",false);
+                                editor.apply();
+                            }
+                            else {
+                                if (bookId == 5) {
+                                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTFREE5,0);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putBoolean("hasWishListFree5",false);
+                                    editor.apply();
+                                }
+                                else {
+                                    if (bookId == 6) {
+                                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST1,0);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putBoolean("hasWishListCost1",false);
+                                        editor.apply();
+                                    }
+                                    else {
+                                        if (bookId == 7) {
+                                            SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST2,0);
+                                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                                            editor.putBoolean("hasWishListCost2",false);
+                                            editor.apply();
+                                        }
+                                        else {
+                                            if (bookId == 8) {
+                                                SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST3,0);
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putBoolean("hasWishListCost3",false);
+                                                editor.apply();
+                                            }
+                                            else {
+                                                if (bookId == 9) {
+                                                    SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST4,0);
+                                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                    editor.putBoolean("hasWishListCost4",false);
+                                                    editor.apply();
+                                                }
+                                                else {
+                                                    if (bookId == 10) {
+                                                        SharedPreferences sharedPreferences = getSharedPreferences(BookActivity.WISHLISTCOST5,0);
+                                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                        editor.putBoolean("hasWishListCost5",false);
+                                                        editor.apply();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                bookslistwishlist.removeAll(bookchecklist);
                 binding.btnDeleteWishlist.setVisibility(View.GONE);
                 binding.btnAddWishlist.setVisibility(View.VISIBLE);
             }

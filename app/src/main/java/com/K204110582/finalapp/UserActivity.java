@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.K204110582.finalapp.databinding.ActivityMainBinding;
 import com.K204110582.finalapp.databinding.ActivityUserBinding;
@@ -16,6 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class UserActivity extends AppCompatActivity {
     ActivityUserBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,16 +58,35 @@ public class UserActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String text = intent.getStringExtra("email");
         String text1 = intent.getStringExtra("tdn");
+        String text2 = intent.getStringExtra("hovaten");
         if (TextUtils.isEmpty(text)) {
         }
         else {
             binding.txtEmail.setText(text);
-            binding.txtUserName.setText(text1);
-            binding.txtUserName.setFocusable(false);
         }
+        if (TextUtils.isEmpty(text1)) {
+        }
+        else {
+            binding.txtUserName.setText(text1);
+        }
+        binding.hovaten.setText(text2);
     }
 
     private void addEvents() {
+        Intent intent = getIntent();
+        String text1 = binding.txtUserName.getText().toString();
+        String text = binding.txtEmail.getText().toString();
+        String text2 = binding.hovaten.getText().toString();
+        binding.btnPersonalInfor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this,UserInformationActivity.class);
+                intent.putExtra("email",text);
+                intent.putExtra("tdn",text1);
+                intent.putExtra("hovaten",text2);
+                startActivity(intent);
+            }
+        });
         binding.btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
