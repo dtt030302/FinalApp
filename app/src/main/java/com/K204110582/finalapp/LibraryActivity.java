@@ -90,6 +90,13 @@ public class LibraryActivity extends AppCompatActivity {
                 binding.gridReading.setVisibility(View.GONE);
             }
         });
+        binding.btnNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LibraryActivity.this,NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
         binding.gridReading.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

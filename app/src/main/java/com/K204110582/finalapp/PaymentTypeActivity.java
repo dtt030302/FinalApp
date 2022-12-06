@@ -6,22 +6,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import com.K204110582.finalapp.databinding.ActivityPaymentTypeBinding;
 
 public class PaymentTypeActivity extends AppCompatActivity {
     ActivityPaymentTypeBinding binding;
-    public String momo;
-    public String shopee;
-    public String vnpay;
-    public String zalopay;
+    public static String momo;
+    public static String shopee;
+    public static String vnpay;
+    public static String zalopay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_payment_type);
         binding = ActivityPaymentTypeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        showData();
         addEvents();
+    }
+
+    private void showData() {
+        binding.momo.setText(PaymentTypeActivity.momo);
+        binding.vnpay.setText(PaymentTypeActivity.vnpay);
+        binding.zalopay.setText(PaymentTypeActivity.zalopay);
+        binding.shopeepay.setText(PaymentTypeActivity.shopee);
     }
 
     private void addEvents() {
@@ -34,10 +43,11 @@ public class PaymentTypeActivity extends AppCompatActivity {
         binding.btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 momo = binding.momo.getText().toString();
-                 shopee = binding.shopeepay.getText().toString();
-                 vnpay = binding.shopeepay.getText().toString();
-                 zalopay = binding.zalopay.getText().toString();
+                 PaymentTypeActivity.momo = binding.momo.getText().toString();
+                PaymentTypeActivity.shopee = binding.shopeepay.getText().toString();
+                PaymentTypeActivity.vnpay = binding.shopeepay.getText().toString();
+                PaymentTypeActivity.zalopay = binding.zalopay.getText().toString();
+                 Toast.makeText(PaymentTypeActivity.this,"Lưu thông tin thanh toán thành công",Toast.LENGTH_SHORT).show();
             }
         });
     }

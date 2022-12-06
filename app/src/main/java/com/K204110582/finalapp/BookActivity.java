@@ -339,6 +339,13 @@ public class BookActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.btnNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookActivity.this,NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
         binding.btnAddWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -411,6 +418,13 @@ public class BookActivity extends AppCompatActivity {
         Books bookcheck = new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id);
         ArrayList<Books> bookchecklist = new ArrayList<>();
         bookchecklist.add(new Books(bookId,bookName,author_name,price,bookThumb,rating,group_chat_id));
+        binding.btnNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookActivity.this,NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

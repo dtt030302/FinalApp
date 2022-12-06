@@ -1,8 +1,10 @@
 package com.K204110582.finalapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -59,6 +61,29 @@ public class UserActivity extends AppCompatActivity {
         addEvents();
     }
 
+    public void showAlertDialog(View v) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Xác nhận đăng xuất");
+        alert.setMessage("Bạn có muốn đăng xuất không ?");
+        alert.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                SharedPreferences sharedPreferences = getSharedPreferences(WaitActivity.PREFS_NAME,0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("hasLoggedIn",false);
+                editor.apply();
+                Intent intent = new Intent(UserActivity.this,StartActivity.class);
+                startActivity(intent);
+            }
+        });
+        alert.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        alert.create().show();
+    }
+
     private void showData() {
         Intent intent = getIntent();
         String text = intent.getStringExtra("email");
@@ -94,12 +119,10 @@ public class UserActivity extends AppCompatActivity {
                 intent.putExtra("email",text);
                 intent.putExtra("tdn",text1);
                 intent.putExtra("hovaten",text2);
-                Bitmap bitmapdata = ((BitmapDrawable)binding.avtPic.getDrawable()).getBitmap();
-                if (bitmapdata != null) {
-                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    bitmapdata.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    byte[] byteArray = stream.toByteArray();
-                    intent.putExtra("avt",byteArray);
+                byte[] byteArray = getIntent().getByteArrayExtra("avt");
+                if (byteArray != null) {
+                    Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                    binding.avtPic.setImageBitmap(bmp);
                 }
                 startActivity(intent);
             }
@@ -108,17 +131,6 @@ public class UserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(UserActivity.this,SearchActivity.class);
-                startActivity(intent);
-            }
-        });
-        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences sharedPreferences = getSharedPreferences(WaitActivity.PREFS_NAME,0);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("hasLoggedIn",false);
-                editor.apply();
-                Intent intent = new Intent(UserActivity.this,StartActivity.class);
                 startActivity(intent);
             }
         });
@@ -168,6 +180,13 @@ public class UserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(UserActivity.this, SecurityActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.btnNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this,NotificationActivity.class);
                 startActivity(intent);
             }
         });

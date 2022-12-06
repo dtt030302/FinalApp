@@ -3,12 +3,22 @@ package com.K204110582.finalapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+
+import com.K204110582.finalapp.databinding.ActivitySecurityBinding;
 
 public class SecurityActivity extends AppCompatActivity {
-
+    ActivitySecurityBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_security);
+        binding= ActivitySecurityBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        binding.btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

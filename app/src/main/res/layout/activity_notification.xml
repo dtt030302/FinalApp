@@ -1,9 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotificationActivity">
+    android:background="@color/main_lightest"
+    tools:context=".NotificationActivity"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+        android:weightSum="10"
+        android:padding="3dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:layout_weight="2"
+            android:background="#DAE1E7"
+            android:src="@drawable/back"/>
+
+        <TextView
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/main_dark"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:text="Thông báo"
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textSize="13sp"
+                android:text="Chào mừng bạn đến với BTalk, hãy cùng khám phá những tựa sách độc quyền của chúng tôi nào."
+                android:background="@drawable/round_out_button"
+                android:padding="10dp"
+                android:textColor="@color/main_lightest"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/library"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textSize="13sp"
+                android:text="Hãy cùng bổ sung các đầu sách hay ho vào thư viện của riêng mình"
+                android:background="@drawable/round_out_button"
+                android:padding="10dp"
+                android:textColor="@color/main_lightest"/>
+
+            <TextView
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textSize="13sp"
+                android:text="Nhắn tin và trò chuyện với những người bạn và cùng thưởng thức một đầu sách hay cùng BTalk"
+                android:background="@drawable/round_out_button"
+                android:padding="10dp"
+                android:textColor="@color/main_lightest"/>
+
+            <TextView
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textSize="13sp"
+                android:text="Hoàn tất hồ sơ cá nhân tại ứng dụng BTalk"
+                android:background="@drawable/round_out_button"
+                android:padding="10dp"
+                android:textColor="@color/main_lightest"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -75,6 +75,7 @@
                 android:layout_marginStart="10dp">
 
                 <ImageView
+                    android:src="@drawable/textlogo_light"
                     android:id="@+id/avt_pic"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
@@ -449,7 +450,8 @@
             android:textColor="@color/main_lightest"
             android:text="Đăng xuất"
             android:textSize="15sp"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:onClick="showAlertDialog"/>
 
         <ImageView
             android:layout_width="match_parent"

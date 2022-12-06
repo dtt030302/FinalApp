@@ -55,6 +55,13 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+        binding.btnNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChatActivity.this,NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
         binding.lvChat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
