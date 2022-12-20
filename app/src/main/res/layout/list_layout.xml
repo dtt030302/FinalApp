@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Sensation"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:gravity="bottom|center"
                 android:textColor="#200E32"
                 android:fontFamily="serif-monospace"

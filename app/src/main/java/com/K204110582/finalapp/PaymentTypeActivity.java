@@ -45,7 +45,7 @@ public class PaymentTypeActivity extends AppCompatActivity {
             public void onClick(View v) {
                  PaymentTypeActivity.momo = binding.momo.getText().toString();
                 PaymentTypeActivity.shopee = binding.shopeepay.getText().toString();
-                PaymentTypeActivity.vnpay = binding.shopeepay.getText().toString();
+                PaymentTypeActivity.vnpay = binding.vnpay.getText().toString();
                 PaymentTypeActivity.zalopay = binding.zalopay.getText().toString();
                  Toast.makeText(PaymentTypeActivity.this,"Lưu thông tin thanh toán thành công",Toast.LENGTH_SHORT).show();
             }

@@ -11,7 +11,7 @@ import com.K204110582.finalapp.databinding.ActivityWaitBinding;
 
 public class WaitActivity extends AppCompatActivity {
     ActivityWaitBinding binding;
-    private static int SPLASH_TIME_OUT=1000;
+    private static int SPLASH_TIME_OUT = 1000;
     public static String PREFS_NAME= "hasLoggedIn";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

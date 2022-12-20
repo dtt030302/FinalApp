@@ -133,7 +133,7 @@
                         style="?android:attr/ratingBarStyleSmall"
                         android:numStars="5"
                         android:stepSize="1"
-                        android:rating="3.0"/>
+                        android:rating="4.0"/>
 
                 </LinearLayout>
 
@@ -212,7 +212,7 @@
                     android:backgroundTint="@color/white"
                     android:textAllCaps="false"
                     android:fontFamily="serif"
-                    android:visibility="invisible"/>
+                    android:visibility="gone"/>
 
             </FrameLayout>
 
